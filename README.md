@@ -4,7 +4,7 @@ Wikipedia-CLI je malá konzolová aplikace pro vyhledávání souhrnů ze člán
 
 ## Použíté knihovny a technologie
 - [Python](https://www.python.org/) (>= 3.9.6 - kompatibilní s 3.7.8)
-- [Wikipedia](htps://github.com/goldsmith/Wikipedia) (>= 1.4.0) - API wrapper pro získávání dat z wikipedie
+- [Wikipedia](https://github.com/goldsmith/Wikipedia/) (>= 1.4.0) - API wrapper pro získávání dat z wikipedie
 - [Django ORM](https://github.com/dancaron/Django-ORM) (>= 3.2.5) - Samostatné ORM z frameworku [Django](https://www.djangoproject.com/)
 - [CMD2](https://github.com/python-cmd2/cmd2) (>= 2.1.2) - Knihovna pro tvorbu konzolových aplikací
 - [SQLITE3](https://docs.python.org/3/library/sqlite3.html) (>= 3.35.5) - Využitý databázový systém pro cache
