@@ -3,7 +3,7 @@
 Wikipedia-CLI je malá konzolová aplikace pro vyhledávání souhrnů ze článků české Wikipedie.
 
 ## Použíté knihovny a technologie
-- [Python](https://www.python.org/) (>= 3.9.6 - kompatibilní s 3.7.8)
+- [Python](https://www.python.org/) (>= 3.9.6) - kompatibilní s 3.7.8
 - [Wikipedia](https://github.com/goldsmith/Wikipedia/) (>= 1.4.0) - API wrapper pro získávání dat z wikipedie
 - [Django ORM](https://github.com/dancaron/Django-ORM) (>= 3.2.5) - Samostatné ORM z frameworku [Django](https://www.djangoproject.com/)
 - [CMD2](https://github.com/python-cmd2/cmd2) (>= 2.1.2) - Knihovna pro tvorbu konzolových aplikací
@@ -19,9 +19,9 @@ Zavoláním scriptu **main.py**
 **př.** user@localhost:/opt/WikipediaApp# /usr/bin/python3 main.py   
 
 ## Seznam příkazů
-- **search <text>** - vyhledá článek s názvem <text> nebo vypíše seznam vhodných článků  
+- **search \<text\>** - vyhledá článek s názvem <text> nebo vypíše seznam vhodných článků  
 - **exit** (alias: stop, quit) - Ukončí aplikaci  
 - **clear** - Vymaže výstup v konzoli
 - **clear cache** - Vymaže všechna data v mezipaměti
 - **clear history** - Vymaže všechny záznamy v historii příkazů
-- **clear history <n>** - Vymaže <n> záznamů v historii příkazů
+- **clear history \<n\>** - Vymaže <n> záznamů v historii příkazů
