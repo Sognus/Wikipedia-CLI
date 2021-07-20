@@ -1,4 +1,5 @@
 # Python libraries imports
+import subprocess
 import sys
 import os
 
@@ -21,9 +22,18 @@ warnings.filterwarnings('ignore', category=GuessedAtParserWarning)
 # 1st Party imports
 from application import WikipediaApplication
 
+# Subprocess call wrapper to avoid stdout output
+def subprocess_call(call):
+    proc = subprocess.Popen(call, stdout=subprocess.PIPE, shell=True)
+    (out, err) = proc.communicate()
+
 
 # Application entry point
 if __name__ == '__main__':
+    # Initial setup - databae migration
+    subprocess_call(["manage.py", "makemigrations"])
+    subprocess_call(["manage.py", "migrate"])
+
     # Set wikipedia language
     wikipedia.set_lang("cs")
 

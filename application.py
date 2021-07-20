@@ -83,3 +83,15 @@ class WikipediaApplication(cmd2.Cmd):
 
         # Print
         self.poutput(data.summary)
+
+    """
+        COMMAND "SEARCH" AND ITS SUBCOMMANDS
+    """
+
+    def do_stop(self, args):
+        self.poutput("Stopping the application..")
+        return True
+
+    def do_exit(self, args):
+        self.poutput("Stopping the application..")
+        return True

@@ -33,6 +33,11 @@ class WikipediaData(models.Model):
             # Page was found
             lookup = wikipedia.summary(name, auto_suggest=False)
             first = lookup.find("\n")
+
+            # Unexpected empty response from API
+            if lookup == "":
+                raise ValueError("Unexpected response from API")
+
             self.summary = lookup[:first]
         except wikipedia.PageError:
             text_base = "Článek s názvem '{}' nebyl nalezen. "
@@ -48,11 +53,14 @@ class WikipediaData(models.Model):
                 text = text_base + "Na Váš dotaz nebyly nalezeny žádné výsledky."
                 self.summary = text
         except wikipedia.DisambiguationError:
-            text = "{} může mít více významů: "
+            text = "\"{}\" může mít více významů: "
             text = text.format(name.capitalize())
 
             for article in lookup:
                 text = text + "\n - " + article
 
             self.summary = text
-
+        except ValueError:
+            text = "Článek s názvem '{}' nebyl nalezen."
+            text = text.format(name.capitalize())
+            self.summary = text
